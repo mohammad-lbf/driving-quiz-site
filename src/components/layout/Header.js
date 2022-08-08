@@ -7,6 +7,7 @@ const Header = () => {
     top:0;
     border-bottom: 2px solid rgb(48, 48, 48);
     background-color: rgb(32, 32, 32);
+    z-index:20;
     a{
         border:2px solid rgb(32, 32, 32);
         transition: all 0.3s;
@@ -22,15 +23,11 @@ const Header = () => {
             <span className="text-warning">LBF</span>
             <span className="text-white">Driving</span>
             </Link>
-            <div style={{marginLeft:"80px"}} className="d-none d-lg-flex align-items-center flex-row-reverse">
+            <div className="d-none d-lg-flex align-items-center flex-row-reverse">
                 <Link className="text-decoration-none text-warning mx-2" to="/">آزمون آیین نامه</Link>
                 <Link className="text-decoration-none text-warning mx-2" to="/weblog">مقالات</Link>
                 <Link className="text-decoration-none bg-danger text-white px-2 py-1 border-0 rounded mx-2" to="/aboutproject">درباره پروژه</Link>
                 <Link className="text-decoration-none text-warning mx-2" to="/aboutus">درباره ما</Link>
-            </div>
-            <div style={{backgroundColor:"#f1f1f1"}} className="p-2 text-muted d-none d-lg-flex rounded flex-row-reverse">
-            <i className="bi bi-search"></i>
-            <input className="border-0 text-end me-1" style={{backgroundColor:"#f1f1f1" , outline:"none"}} type="text" placeholder="...جستجو" />
             </div>
         </Header>
     );

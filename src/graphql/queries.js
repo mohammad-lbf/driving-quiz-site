@@ -16,6 +16,16 @@ query {
     }
   }
 }
-
-
+`
+export const GET_TESTS = gql`
+query MyQuery {
+  tests {
+    id
+    slug
+    testName
+    testPhoto {
+      url
+    }
+  }
+}
 `

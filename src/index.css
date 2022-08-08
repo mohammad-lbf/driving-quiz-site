@@ -1,6 +1,21 @@
 *{
   font-family: 'Vazirmatn'
 }
+.bg-main-1{
+  background-color:#324376 ;
+}
+.text-main-1{
+  color: #324376;
+}
+.fw-200{
+  font-weight: 200;
+}
+.fs-15{
+  font-size: 15px;
+}
+.fs-13{
+  font-size: 13px;
+}
 ::-webkit-scrollbar {
   width: 13px;
 }
