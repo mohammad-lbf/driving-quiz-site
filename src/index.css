@@ -16,6 +16,16 @@
 .fs-13{
   font-size: 13px;
 }
+.btn-main-1{
+  background-color: #324376;
+  transition: all 0.3s;
+}
+.cur-poin{
+  cursor: pointer;
+}
+.btn-main-1:hover{
+  background-color: #1a2852;
+}
 ::-webkit-scrollbar {
   width: 13px;
 }

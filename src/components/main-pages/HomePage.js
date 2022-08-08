@@ -1,21 +1,34 @@
 import { useQuery } from '@apollo/client';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Test from '../../assets/test.png';
+import React , {useEffect} from 'react';
 import { GET_TESTS } from '../../graphql/queries';
+import Error from '../shared/Error';
 import Spinner from '../shared/Spinner';
 import TestCard from '../shared/TestCard';
+import { useDispatch } from 'react-redux';
 
 const HomePage = () => {
     const {loading , data , error} = useQuery(GET_TESTS);
-    console.log(data)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch({type:"RESET"})
+    } , []);
+    useEffect(()=>{
+        scrollTop()
+    } , [])
+        const scrollTop = ()=>{
+            window.scrollTo({
+                top:-100,
+                left:-100,
+                behavior:'smooth'
+            })
+        }
     return (
         <div style={{paddingTop:"85px" , paddingBottom:"0.65rem" , backgroundColor:"rgb(20, 20, 20)" }}>
             <div className="text-white container p-3 rounded" style={{border:"1px solid rgb(48, 48, 48)" , backgroundColor:"rgb(32, 32, 32)" , minHeight:"75vh"}}>
                 <p className="text-center fw-bold fs-3 mb-4">آزمون های آیین نامه</p>
+                {error && <Error />}
                 {data && <>
                 <div className="w-100 text-center">
-                {/* <img className="rounded mb-3" src={Test} width="300px" height="200px" /> */}
                 </div>
                 <p className="text-center mb-0 fw-200">با کلیک روی آزمون مورد نظر، وارد آزمون شوید</p>
                         </>}

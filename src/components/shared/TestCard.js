@@ -30,8 +30,9 @@ const TestCard = ({testName , testPhoto , slug}) => {
                 <div className="text-end px-2">
                 <p className="fs-15 text-white ">{testName}<i className="text-warning ms-2 bi bi-card-list"></i></p>
                 <p className="fs-13 text-white">زمان آزمون: 20 دقیقه<i className="text-warning ms-1 bi bi-alarm"></i></p>
+                <p className="fs-13 text-white"> طراح: محمد لبافی<i className="text-warning ms-1 bi bi-pen"></i></p>
                 </div>
-                <Link to={`/${slug}`} className="btn btn-warning text-main-1">ورود به آزمون</Link>
+                <Link to={`/${slug}`} className="btn btn-warning text-main-1 mt-1">ورود به آزمون</Link>
             </div>
             </Card>
         </>
