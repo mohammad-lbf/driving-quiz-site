@@ -6,6 +6,8 @@ import Spinner from './shared/Spinner';
 import Error from './shared/Error'
 import AnimatedProgress from './shared/AnimatedProgress';
 import Questions from './Questions';
+import Timer from './shared/Timer';
+import FinishIcon from '../assets/testFinish.png'
 
 const Test = ({loading , data , error , testTitle}) => {
     const [testStarted , setTestStarted] = useState(false);
@@ -35,7 +37,8 @@ const Test = ({loading , data , error , testTitle}) => {
             <div className="container">
                 <div className="row justify-content-xl-between gy-2 gy-xl-0">
                     <div className="col-12 col-xl-8 rounded py-3 px-3" style={{backgroundColor:"rgb(32, 32, 32)" , minHeight:"75vh"}}>
-                        <p id="#test-title" className="text-center text-white fs-3 mt-xl-5">{testTitle}</p>
+                        <p id="#test-title" className="text-center text-white fs-3 mt-xl-0">{testTitle}</p>
+                        <p className="fs-13 text-white text-center border-bottom pb-2"> طراح: محمد لبافی<i className="text-warning ms-1 bi bi-pen"></i></p>
                         {!testStarted && <div>
                             <p className="text-center text-white fs-13 fw-200 lh-lg" >بعد از آزمون، حتما پاسخ های خود را تحلیل کرده و اشتباهات خود را بررسی کنید</p>
                         <p className="text-center text-white fs-13 fw-200">زمان دریافت کارنامه: بلافاصله پس از آزمون</p>
@@ -58,11 +61,11 @@ const Test = ({loading , data , error , testTitle}) => {
                         }
                         {
                             data && testStarted && !testFinished &&
-                            <div className="text-white w-100 text-center d-xl-none">
-                                <p>زمان باقیمانده: 00:00:00<i className="text-warning ms-1 bi bi-alarm"></i></p>
+                            <div className="text-white w-100 d-flex flex-column align-items-center d-xl-none">
+                                <p className="w-100 d-flex flex-row-reverse fw-200 fs-15 justify-content-center"><i className="text-warning ms-1 bi bi-alarm"></i> :زمان باقیمانده{<Timer setTestFinished={setTestFinished} />}</p>
                                 <AnimatedProgress />
                                 <p className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
-                                <div className="d-flex flex-row-reverse border-bottom pb-1 ">
+                                <div className="d-flex flex-row-reverse border-bottom pb-1" style={{flexWrap:"wrap"}}>
                                     {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
                                         <span className="text-secondary" style={{fontSize:"15px"}}>{item.number}</span>
                                         {item.status != "no-answer" && <div className="bg-secondary" style={{height:"30px" , width:"30px"}}></div>} 
@@ -72,8 +75,18 @@ const Test = ({loading , data , error , testTitle}) => {
 
                             </div>
                         }
+                        {
+                            data && testStarted && !testFinished &&
+                            <div className="justify-content-center d-none d-xl-flex">
+                                <button onClick={()=>setTestFinished(true)} className="mt-4 btn-main-1 border-0 py-2 px-3 rounded text-white">پایان آزمون</button>
+                            </div>
+                        }
+                        {
+                            testFinished &&
+                            <Report />
+                        }
                     </div>
-                    <div className=" py-3 px-3 col-12 col-xl-3 d-none d-xl-flex rounded flex-column align-items-center" style={{backgroundColor:"rgb(32, 32, 32)" , Height:"75vh"}}>
+                    <div  className=" py-3 px-3 col-12 pb-5 col-xl-3 d-none d-xl-flex rounded flex-column align-items-center" style={{backgroundColor:"rgb(32, 32, 32)" , Height:"75vh"}}>
                         {loading && <Spinner /> }
                         {error && <Error />}
                         {data && !testStarted &&
@@ -87,18 +100,23 @@ const Test = ({loading , data , error , testTitle}) => {
                         }
                         {
                             data && testStarted && !testFinished &&
-                            <div className="text-white w-100 text-center ">
-                                <p>زمان باقیمانده: 00:00:00<i className="text-warning ms-1 bi bi-alarm"></i></p>
-                                <AnimatedProgress />
-                                <p className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
-                                <div className="d-flex flex-row-reverse border-bottom pb-1 ">
+                            <div className="text-white text-center mb-3" style={{position:"fixed" , width:"270px" , top:"100px" , left:`${window.innerWidth}`}}>
+                                <p className="w-100 d-flex flex-row-reverse fw-200 fs-15 justify-content-center"><i className="text-warning ms-1 bi bi-alarm"></i> :زمان باقیمانده{<Timer setTestFinished={setTestFinished} />}</p>
+                                <AnimatedProgress  />
+                                <p style={{width:"270px"}} className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
+                                <div className="d-flex flex-row-reverse border-bottom pb-1" style={{flexWrap:"wrap" , width:"270px"}}>
                                     {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
                                         <span className="text-secondary" style={{fontSize:"15px"}}>{item.number}</span>
                                         {item.status != "no-answer" && <div className="bg-secondary" style={{height:"30px" , width:"30px"}}></div>} 
                                     </div>)}
                                 </div>
-
-                                <button onClick={()=>{setTestFinished(true)}} className="mt-4 btn-main-1 border-0 py-2 px-3 rounded text-white">پایان آزمون</button>
+                            </div>
+                        }
+                        {
+                            testFinished &&
+                            <div className="d-flex flex-column align-items-center mt-5">
+                                <p className="text-warning fw-bold mb-2">!آزمون پایان یافت</p>
+                                <img src={FinishIcon} style={{width:"250px"}} />
                             </div>
                         }
                     </div>

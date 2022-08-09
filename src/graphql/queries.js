@@ -2,7 +2,7 @@ import {gql} from '@apollo/client'
 
 export const GET_FIRST_SIGN_TEST = gql`
 query {
-  firstsignquestions {
+  firstsignquestions (last:30) {
     id
     number
     option1

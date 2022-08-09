@@ -5,6 +5,7 @@ import Test from '../components/Test';
 
 const FirstSignsTest = () => {
     const {loading , data , error} = useQuery(GET_FIRST_SIGN_TEST);
+    console.log(data)
     return (
         <div>
              <Test 
