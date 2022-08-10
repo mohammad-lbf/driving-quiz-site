@@ -19,7 +19,7 @@ const Test = ({loading , data , error , testTitle}) => {
         data &&
         dispatch(
             {type:"ADD_QUESTIONS" , 
-            payload:[...data.firstsignquestions]
+            payload:[...data]
         })
     } , [data]);
     useEffect(()=>{

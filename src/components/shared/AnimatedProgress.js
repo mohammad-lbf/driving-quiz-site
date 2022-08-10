@@ -3,7 +3,6 @@ import React , {useState , useEffect} from 'react';
 const AnimatedProgress = () => {
     const[width , setWidth] = useState(100);
     useEffect(()=>{
-        console.log(width)  
     } , [width])
     const timer = ()=>{
         setTimeout(()=>{

@@ -35,7 +35,7 @@ const Question = (props) => {
     }
     return (
         <div className="text-white d-flex flex-column align-items-end w-100 border-bottom pb-3 mb-2">
-            <div className="d-flex flex-column align-items-center align-items-lg-end mb-3">
+            <div className="d-flex flex-column  align-items-end mb-3">
                 <div className="d-flex">
                 <p className="text-center text-lg-end me-1 fw-200">{props.question}</p>
                 <p className="text-center text-lg-end">.{props.number}</p>
