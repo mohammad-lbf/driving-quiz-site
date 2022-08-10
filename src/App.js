@@ -1,4 +1,5 @@
-import React from 'react';
+import React , {useState} from 'react';
+import HambergurMenuModal from './components/HambergurMenuModal';
 import { Provider } from 'react-redux';
 import Header from './components/layout/Header';
 import store from './Redux/store';
@@ -12,10 +13,12 @@ import AboutProject from './components/main-pages/AboutProject';
 import AboutUs from './components/main-pages/AboutUs';
 
 const App = () => {
+  const[open , setOpen] = useState(false);
   return (
     <Provider store={store}>
       <div>
-        <Header />
+        <Header open={open} setOpen={setOpen} />
+        <HambergurMenuModal open={open} setOpen={setOpen} />
         <div className="main-app">
             <Routes>
               <Route path="/" element={<HomePage />} />

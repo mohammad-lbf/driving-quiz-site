@@ -6,7 +6,7 @@ const Footer = () => {
     const Footer = styled.div`
     border-top: 2px solid rgb(48, 48, 48);
     background-color: rgb(32, 32, 32);
-    z-index:30;
+    z-index:15;
     a{
         border-bottom:2px solid rgb(32, 32, 32);
         transition: all 0.3s;

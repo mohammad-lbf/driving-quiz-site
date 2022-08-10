@@ -55,6 +55,22 @@ const Test = ({loading , data , error , testTitle}) => {
                           <button onClick={()=>setTestStarted(true)} className="btn-main-1 text-white rounded border-0 p-2 fs-15 mt-3">شروع آزمون</button>
                     </div>
                         }
+                        {
+                            data && testStarted && !testFinished &&
+                            <div className="text-white w-100 d-flex flex-column align-items-center d-xl-none pb-2 border-bottom mb-1">
+                                <p className="w-100 d-flex flex-row-reverse fw-200 fs-15 justify-content-center"><i className="text-warning ms-1 bi bi-alarm"></i> :زمان باقیمانده{<Timer setTestFinished={setTestFinished} />}</p>
+                                <AnimatedProgress />
+                                <p className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
+                                <div className="d-flex flex-row-reverse border-bottom pb-1" style={{flexWrap:"wrap"}}>
+                                    {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
+                                        <span className="text-secondary" style={{fontSize:"15px"}}>{item.number}</span>
+                                        {item.status != "no-answer" && <div className="bg-secondary" style={{height:"30px" , width:"30px"}}></div>} 
+                                    </div>)}
+                                </div>
+                                <button onClick={()=>setTestFinished(true)} className="mt-2 btn-main-1 border-0 py-2 px-3 rounded text-white">پایان آزمون</button>
+
+                            </div>
+                        }
                         
                         {data && testStarted && !testFinished &&
                         <Questions data={data} />

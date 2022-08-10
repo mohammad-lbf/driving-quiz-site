@@ -21,6 +21,7 @@ const Report = () => {
                 <p className="fw-200 text-center w-100 fs-4 py-3 border-bottom border-top ">:پاسخنامه سوالات</p>
                 {questions.map(item => <ReportQuestion {...item} /> )}
             </div>
+            <Link className="text-decoration-none btn btn-primary text-light py-1 px-3 rounded" to="/">بازگشت به صفحه اصلی</Link>
         </div>
     );
 };

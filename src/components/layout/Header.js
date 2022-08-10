@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-const Header = () => {
+import HambergurMenuOpener from '../HambergurMenuOpener';
+const Header = ({open , setOpen}) => {
     const Header = styled.div`
     position:fixed;
     top:0;
@@ -23,6 +24,7 @@ const Header = () => {
             <span className="text-warning">LBF</span>
             <span className="text-white">Driving</span>
             </Link>
+            <HambergurMenuOpener open={open} setOpen={setOpen} />
             <div className="d-none d-lg-flex align-items-center flex-row-reverse">
                 <Link className="text-decoration-none text-warning mx-2" to="/">آزمون آیین نامه</Link>
                 <Link className="text-decoration-none text-warning mx-2" to="/weblog">مقالات</Link>
