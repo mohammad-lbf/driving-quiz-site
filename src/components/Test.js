@@ -38,7 +38,7 @@ const Test = ({loading , data , error , testTitle}) => {
                 <div className="row justify-content-xl-between gy-2 gy-xl-0">
                     <div className="col-12 col-xl-8 rounded py-3 px-3" style={{backgroundColor:"rgb(32, 32, 32)" , minHeight:"75vh"}}>
                         <p id="#test-title" className="text-center text-white fs-3 mt-xl-0">{testTitle}</p>
-                        <p className="fs-13 text-white text-center border-bottom pb-2"> طراح: محمد لبافی<i className="text-warning ms-1 bi bi-pen"></i></p>
+                        <p className="fs-13 text-white text-center border-bottom pb-1"> طراح: محمد لبافی<i className="text-warning ms-1 bi bi-pen"></i></p>
                         {!testStarted && <div>
                             <p className="text-center text-white fs-13 fw-200 lh-lg" >بعد از آزمون، حتما پاسخ های خود را تحلیل کرده و اشتباهات خود را بررسی کنید</p>
                         <p className="text-center text-white fs-13 fw-200">زمان دریافت کارنامه: بلافاصله پس از آزمون</p>
@@ -69,6 +69,12 @@ const Test = ({loading , data , error , testTitle}) => {
                                 </div>
                                 <button onClick={()=>setTestFinished(true)} className="mt-2 btn-main-1 border-0 py-2 px-3 rounded text-white">پایان آزمون</button>
 
+                            </div>
+                        }
+                        {
+                            data && testStarted && !testFinished &&
+                            <div className="justify-content-center d-none d-xl-flex border-bottom pb-3 pt-0 mb-2">
+                                <button onClick={()=>setTestFinished(true)} className="mt-0 btn-main-1 border-0 py-2 px-3 rounded text-white">پایان آزمون</button>
                             </div>
                         }
                         

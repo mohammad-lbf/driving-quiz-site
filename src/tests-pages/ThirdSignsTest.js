@@ -5,7 +5,7 @@ import Test from '../components/Test';
 
 const ThirdSignsTest = () => {
     const {loading , data , error} = useQuery(GET_FIRST_SIGN_TEST);
-    // const newData = data.firstsignquestions.slice().reverse(data.firstsignquestions).map(item => {return {...item , number:(item.number * -1) + 31}})
+    
     const theFirst10 = data ? data.firstsignquestions.slice(0 , 10).map(item => {
         return{...item , number:item.number + 10}
     }) : data;

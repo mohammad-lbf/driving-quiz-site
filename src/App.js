@@ -14,6 +14,8 @@ import AboutUs from './components/main-pages/AboutUs';
 import SecondSignsTest from './tests-pages/SecondSignsTest';
 import ThirdSignsTest from './tests-pages/ThirdSignsTest';
 import FirstRegulatinsTest from './tests-pages/FirstRegulatinsTest';
+import SecondRegulationsTest from './tests-pages/SecondRegulationsTest';
+import ThirdRegulationsQuestions from './tests-pages/ThirdRegulationsQuestions';
 
 const App = () => {
   const[open , setOpen] = useState(false);
@@ -32,6 +34,8 @@ const App = () => {
               <Route path="/signs-test-2" element={<SecondSignsTest />} />
               <Route path="/signs-test-3" element={<ThirdSignsTest />} />
               <Route path="/regulations-test-1" element={<FirstRegulatinsTest />} />
+              <Route path="/regulations-test-2" element={<SecondRegulationsTest />} />
+              <Route path="/regulations-test-3" element={<ThirdRegulationsQuestions />} />
             </Routes>
         </div>
         <Footer />

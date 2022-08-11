@@ -4,9 +4,9 @@ const ReportQuestion = ({number ,question ,questionimage , option1 , option2 , o
     return (
         <div className="border-bottom pb-2 mb-2">
             <div className="d-flex flex-column align-items-end ">
-                <div className="d-flex fw-200 flex-row-reverse align-items-center mb-3">
+                <div className="d-flex fw-200 flex-row-reverse align-items-start mb-3">
                     <p className="ms-1 mb-0">.{number}</p>
-                    <p className="mb-0">{question}</p>
+                    <p style={{direction:"rtl"}} className="mb-0">{question}</p>
                 </div>
                 <div className={`d-flex flex-row-reverse fs-15 py-1 px-3 rounded mb-2
                  ${status == "no-answer" && "text-main-1"}
