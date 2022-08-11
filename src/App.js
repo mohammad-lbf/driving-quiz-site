@@ -16,6 +16,7 @@ import ThirdSignsTest from './tests-pages/ThirdSignsTest';
 import FirstRegulatinsTest from './tests-pages/FirstRegulatinsTest';
 import SecondRegulationsTest from './tests-pages/SecondRegulationsTest';
 import ThirdRegulationsQuestions from './tests-pages/ThirdRegulationsQuestions';
+import AboutDeveloper from './components/main-pages/AboutDeveloper';
 
 const App = () => {
   const[open , setOpen] = useState(false);
@@ -29,7 +30,7 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/weblog" element={<Weblog />} />
               <Route path="/aboutproject" element={<AboutProject />} />
-              <Route path="/aboutus" element={<AboutUs />} />
+              <Route path="/aboutdeveloper" element={<AboutDeveloper />} />
               <Route path="/signs-test-1" element={<FirstSignsTest />} />
               <Route path="/signs-test-2" element={<SecondSignsTest />} />
               <Route path="/signs-test-3" element={<ThirdSignsTest />} />

@@ -29,7 +29,7 @@ const Header = ({open , setOpen}) => {
                 <Link className="text-decoration-none text-warning mx-2" to="/">آزمون آیین نامه</Link>
                 <Link className="text-decoration-none text-warning mx-2" to="/weblog">مقالات</Link>
                 <Link className="text-decoration-none bg-danger text-white px-2 py-1 border-0 rounded mx-2" to="/aboutproject">درباره پروژه</Link>
-                <Link className="text-decoration-none text-warning mx-2" to="/aboutus">درباره ما</Link>
+                <Link className="text-decoration-none text-warning mx-2" to="/aboutdeveloper">درباره ما</Link>
             </div>
         </Header>
     );

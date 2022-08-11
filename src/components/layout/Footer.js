@@ -33,8 +33,8 @@ const Footer = () => {
             <div className="d-flex flex-column align-items-center align-items-lg-end footer-logo mb-5 mb-lg-0">
                 <Link className="text-decoration-none text-warning my-1" to="/">آزمون آیین نامه</Link>
                 <Link className="text-decoration-none text-warning my-1" to="/">مقالات</Link>
-                <Link className="text-decoration-none bg-danger text-white my-1 px-2 py-1 border-0 rounded" to="/">درباره پروژه</Link>
-                <Link className="text-decoration-none text-warning my-1" to="/">درباره ما</Link>
+                <Link className="text-decoration-none bg-danger text-white my-1 px-2 py-1 border-0 rounded" to="/aboutproject">درباره پروژه</Link>
+                <Link className="text-decoration-none text-warning my-1" to="/aboutdeveloper">درباره ما</Link>
             </div>
             <div className="d-flex flex-column align-items-center">
             <p style={{fontSize:"15px"}} className="fw-bold text-warning">ما را در فضای مجازی دنبال کنید</p>

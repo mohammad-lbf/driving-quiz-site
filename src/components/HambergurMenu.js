@@ -47,7 +47,7 @@ const HambergurMenu = (props) => {
                             <p className="mb-0">درباره پروژه</p>
                         </div>
                     </Link>
-                    <Link className="border-0 my-2" to="/aboutus" onClick={()=>clickHandler()}>
+                    <Link className="border-0 my-2" to="/aboutdeveloper" onClick={()=>clickHandler()}>
                         <div style={{width:"240px"}} className="bg-warning text-main-1 py-2 rounded text-center">
                             <p className="mb-0">درباره ما</p>
                         </div>
@@ -56,7 +56,7 @@ const HambergurMenu = (props) => {
                 <div className="border py-3 rounded text-center fs-13 mt-3">
                      <p className="mb-2">:طراح و توسعه دهنده پروژه</p>
                      <p className="mb-2">محمد لبافی</p>
-                     <Link onClick={()=>clickHandler()} to="/" className="mt-2 btn btn-primary border-0 fs-13 py-1 px-2 rounded">درباره توسعه دهنده</Link>
+                     <Link onClick={()=>clickHandler()} to="/aboutdeveloper" className="mt-2 btn btn-primary border-0 fs-13 py-1 px-2 rounded">درباره توسعه دهنده</Link>
                 </div>
         </Div>
     );
