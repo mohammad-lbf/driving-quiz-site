@@ -26,6 +26,11 @@
 .btn-main-1:hover{
   background-color: #1a2852;
 }
+@media(min-width:576px){
+  .fs-sm-15{
+    font-size: 15px;
+  }
+}
 ::-webkit-scrollbar {
   width: 13px;
 }

@@ -22,7 +22,7 @@ const ReportQuestion = ({number ,question ,questionimage , option1 , option2 , o
                     {status == "incorrect" && "نادرست"}
                 </p>
                   </div>
-                <img className="rounded" style={{width:"200px" , height:"200px"}} src={questionimage.url} />
+                {questionimage && <img className="rounded" style={{width:"200px" , height:"200px"}} src={questionimage.url} />}
             </div>
             <div className="d-flex flex-column align-items-end py-2">
                 <div className={`d-flex mb-1 py-1 px-3 rounded flex-row-reverse align-items-center fs-13

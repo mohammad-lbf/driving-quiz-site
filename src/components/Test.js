@@ -60,8 +60,8 @@ const Test = ({loading , data , error , testTitle}) => {
                             <div className="text-white w-100 d-flex flex-column align-items-center d-xl-none pb-2 border-bottom mb-1">
                                 <p className="w-100 d-flex flex-row-reverse fw-200 fs-15 justify-content-center"><i className="text-warning ms-1 bi bi-alarm"></i> :زمان باقیمانده{<Timer setTestFinished={setTestFinished} />}</p>
                                 <AnimatedProgress />
-                                <p className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
-                                <div className="d-flex flex-row-reverse border-bottom pb-1" style={{flexWrap:"wrap"}}>
+                                <p className="text-white mb-2 border-top pt-1 mt-4 w-100 text-center">پاسخنامه</p>
+                                <div className="d-flex flex-row-reverse border-bottom pb-1 w-100 justify-content-center" style={{flexWrap:"wrap"}}>
                                     {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
                                         <span className="text-secondary" style={{fontSize:"15px"}}>{item.number}</span>
                                         {item.status != "no-answer" && <div className="bg-secondary" style={{height:"30px" , width:"30px"}}></div>} 
@@ -80,8 +80,8 @@ const Test = ({loading , data , error , testTitle}) => {
                             <div className="text-white w-100 d-flex flex-column align-items-center d-xl-none">
                                 <p className="w-100 d-flex flex-row-reverse fw-200 fs-15 justify-content-center"><i className="text-warning ms-1 bi bi-alarm"></i> :زمان باقیمانده{<Timer setTestFinished={setTestFinished} />}</p>
                                 <AnimatedProgress />
-                                <p className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
-                                <div className="d-flex flex-row-reverse border-bottom pb-1" style={{flexWrap:"wrap"}}>
+                                <p className="text-white mb-2 border-top pt-1 mt-4 text-center w-100">پاسخنامه</p>
+                                <div className="d-flex flex-row-reverse border-bottom pb-1 justify-content-center w-100" style={{flexWrap:"wrap"}}>
                                     {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
                                         <span className="text-secondary" style={{fontSize:"15px"}}>{item.number}</span>
                                         {item.status != "no-answer" && <div className="bg-secondary" style={{height:"30px" , width:"30px"}}></div>} 
@@ -119,7 +119,7 @@ const Test = ({loading , data , error , testTitle}) => {
                             <div className="text-white text-center mb-3" style={{position:"fixed" , width:"270px" , top:"100px" , left:`${window.innerWidth}`}}>
                                 <p className="w-100 d-flex flex-row-reverse fw-200 fs-15 justify-content-center"><i className="text-warning ms-1 bi bi-alarm"></i> :زمان باقیمانده{<Timer setTestFinished={setTestFinished} />}</p>
                                 <AnimatedProgress  />
-                                <p style={{width:"270px"}} className="text-white mb-2 border-top pt-1 mt-4">پاسخنامه</p>
+                                <p style={{width:"270px"}} className="text-white mb-2 border-top pt-1 mt-4 text-center">پاسخنامه</p>
                                 <div className="d-flex flex-row-reverse border-bottom pb-1" style={{flexWrap:"wrap" , width:"270px"}}>
                                     {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
                                         <span className="text-secondary" style={{fontSize:"15px"}}>{item.number}</span>
