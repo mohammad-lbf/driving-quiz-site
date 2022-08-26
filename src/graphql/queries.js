@@ -47,3 +47,47 @@ query MyQuery {
   }
 }
 `
+export const GET_BLOGS_INFO = gql`
+query{
+  articles {
+    coverPhoto {
+      url
+    }
+    date
+    id
+    slug
+    title
+    content {
+      html
+    }
+    author {
+      name
+      authorPhoto {
+        url
+      }
+    }
+  }
+}
+`
+export const GET_BLOG_INFO = gql`
+query MyQuery($slug:String!) {
+  article(where: {slug: $slug}) {
+    author {
+      name
+      authorPhoto {
+        url
+      }
+    }
+    content {
+      html
+    }
+    coverPhoto {
+      url
+    }
+    date
+    title
+  }
+}
+
+
+`
