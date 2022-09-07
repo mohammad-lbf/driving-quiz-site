@@ -18,14 +18,25 @@ LBFDriving نام پروژه: سایت آزمون آنلاین آیین نامه
 
 ## `تکنولوژی های مورد استفاده در این پروژه`
 HTML & CSS
+
 Java Script
+
 bootstrap 5
+
 Git & Git hub
+
 React js
+
 GraphQL
+
 HyGraph
+
 Redux
+
 react router dom (SPA site)
+
 React hooks
+
 styled components
+
 responsive design
